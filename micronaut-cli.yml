@@ -1,5 +1,5 @@
 profile: service
-defaultPackage: micronaut.redis.example
+defaultPackage: micronaut.cache.example
 ---
 testFramework: spock
 sourceLanguage: groovy

@@ -7,7 +7,7 @@ plugins {
 
 
 version "0.1"
-group "micronaut.redis.example"
+group "micronaut.cache.example"
 
 repositories {
     mavenCentral()
@@ -50,7 +50,7 @@ dependencies {
 
 test.classpath += configurations.developmentOnly
 
-mainClassName = "micronaut.redis.example.Application"
+mainClassName = "micronaut.cache.example.Application"
 
 
 shadowJar {
