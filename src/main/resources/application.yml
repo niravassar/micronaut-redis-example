@@ -20,3 +20,8 @@ redis:
     my-cache:
       # expire one hour after write
       expire-after-write: 1h
+---
+endpoints:
+  health:
+    enabled: true
+    details-visible: ANONYMOUS
