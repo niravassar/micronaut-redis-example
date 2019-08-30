@@ -3,6 +3,6 @@ package micronaut.cache.example.domain
 import grails.gorm.annotation.Entity
 
 @Entity
-class Message {
+class Message implements Serializable {
     String title
 }

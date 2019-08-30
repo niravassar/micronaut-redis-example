@@ -2,8 +2,8 @@ package micronaut.cache.example.service
 
 import grails.gorm.transactions.Rollback
 import io.micronaut.cache.DefaultCacheManager
-import io.micronaut.cache.DefaultSyncCache
 import io.micronaut.cache.SyncCache
+import io.micronaut.configuration.lettuce.cache.RedisCache
 import io.micronaut.test.annotation.MicronautTest
 import micronaut.cache.example.Application
 import micronaut.cache.example.domain.Message
@@ -56,7 +56,7 @@ class MessageServiceSpec extends Specification {
         cacheNames.asList()[0] == "my-cache"
 
         when: 'get the cache'
-        SyncCache<DefaultSyncCache> cache = defaultCacheManager.getCache("my-cache")
+        SyncCache<RedisCache> cache = defaultCacheManager.getCache("my-cache")
         Message message = (Message) cache.get("myMessage", Message).get()
 
         then:

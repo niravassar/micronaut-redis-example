@@ -2,9 +2,6 @@
 micronaut:
   application:
     name: micronaut-redis-example
-  caches:
-    my-cache:
-      maximumSize: 20
 ---
 #Datasource
 hibernate:
@@ -17,3 +14,9 @@ dataSource:
   password: ''
   url: jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
 ---
+redis:
+  uri: redis://localhost
+  caches:
+    my-cache:
+      # expire one hour after write
+      expire-after-write: 1h
