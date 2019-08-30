@@ -2,7 +2,18 @@
 micronaut:
   application:
     name: micronaut-redis-example
-
+  caches:
+    my-cache:
+      maximumSize: 20
 ---
-redis:
-  uri: redis://localhost
+#Datasource
+hibernate:
+  hbm2ddl:
+    auto: update
+dataSource:
+  logSql: true
+  driverClassName: org.h2.Driver
+  username: sa
+  password: ''
+  url: jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+---

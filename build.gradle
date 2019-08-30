@@ -37,6 +37,15 @@ dependencies {
     testImplementation "io.micronaut.test:micronaut-test-spock"
     testImplementation "io.micronaut.test:micronaut-test-junit5"
     testRuntimeOnly "org.junit.vintage:junit-vintage-engine:5.5.0"
+
+    testCompile "com.github.kstyrc:embedded-redis:0.6"
+    implementation 'io.micronaut:micronaut-management'
+
+    runtime "com.h2database:h2:$h2Version"
+    compile "io.micronaut.configuration:micronaut-hibernate-gorm"
+    compile "org.grails:grails-datastore-gorm-hibernate5:$gormVersion"
+    runtime "io.micronaut.configuration:micronaut-jdbc-hikari"
+    implementation 'io.micronaut:micronaut-management'
 }
 
 test.classpath += configurations.developmentOnly
