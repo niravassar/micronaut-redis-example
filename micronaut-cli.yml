@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: micronaut.redis.example
+---
+testFramework: spock
+sourceLanguage: groovy
